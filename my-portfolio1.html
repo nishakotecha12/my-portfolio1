@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisha Kotecha - Animated Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* Light pastel gradient */
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.9); /* Light background with some transparency */
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4d4d4d;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #4d4d4d;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+
+        /* Zoom-In and Fade Animation for the hero section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #ffb6b9, #fae1dc);
+            color: #333;
+            animation: fadeZoom 1.5s ease-in-out;
+        }
+
+        @keyframes fadeZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .hero .btn {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .hero .btn:hover {
+            background-color: #ff4a33;
+        }
+
+        .why-hire {
+            background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to keep the background visible */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            max-width: 800px;
+            animation: fadeZoom 1.5s ease-in-out;
+        }
+
+        .why-hire h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            text-align: center;
+        }
+
+        .why-hire ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .why-hire ul li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .why-hire ul li i {
+            color: #ff6f61;
+            margin-right: 10px;
+        }
+
+        .skills {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .skills .skill {
+            margin: 15px auto;
+            width: 90%;
+            max-width: 700px;
+        }
+
+        .skills .skill-name {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .skills .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+        }
+
+        .skills .progress-bar .progress {
+            background-color: #ff6f61;
+            height: 100%;
+            width: 0;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        .portfolio {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .portfolio h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+
+        .portfolio .carousel {
+            display: flex;
+            overflow-x: scroll;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .portfolio .carousel .project {
+            min-width: 300px;
+            background-color: #f0f4f8;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio .carousel .project h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .portfolio .carousel .project p {
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #f0f4f8;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        footer p a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .why-hire {
+                padding: 20px;
+            }
+
+            .portfolio .carousel {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Nisha Kotecha</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I am Nisha Kotecha, a Software Engineering Student skilled in Web Development, Data Science, Power BI, Generative AI, Python, C, C++, and more. I am also an ETS Winner 2023, Infographic Designer, and T&P Coordinator.</p>
+            <button class="btn">Download Resume</button>
+        </div>
+    </section>
+
+    <!-- Why Hire Me Section -->
+    <section id="about">
+        <div class="container why-hire">
+            <h2>Why Should You Hire Me?</h2>
+            <ul>
+                <li><i class="fas fa-check"></i> Proficient in web development technologies: HTML, CSS, JavaScript, Python, SQL, Power BI, C, and C++.</li>
+                <li><i class="fas fa-check"></i> Certified in Digital Marketing and adept at leveraging AI tools for creative projects.</li>
+                <li><i class="fas fa-check"></i> Proven leadership skills as GDG Co-Lead, T&P Coordinator, and event organizer with excellent communication.</li>
+                <li><i class="fas fa-check"></i> Expertise in designing professional infographics and impactful presentations.</li>
+                <li><i class="fas fa-check"></i> Strong problem-solving skills with a portfolio of impactful projects like To-Do List, Calculator, and more.</li>
+                <li><i class="fas fa-check"></i> Excellent presentation and communication skills.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skill">
+                <div class="skill-name">HTML & CSS</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">JavaScript</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Python</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">SQL</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">Power BI</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>~
+            <div class="skill">
+                <div class="skill-name">C</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">C++</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 68%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="carousel">
+                <div class="project">
+                    <h3>To-Do List App</h3>
+                    <p>A task management application built with Python and Flask.</p>
+                </div>
+                <div class="project">
+                    <h3>Simple Calculator</h3>
+                    <p>A lightweight web-based calculator using JavaScript.</p>
+                </div>
+                <div class="project">
+                    <h3>Hotel Website</h3>
+                    <p>A responsive front-end website designed for a hotel to showcase rooms, amenities, and online booking.</p>
+                </div>
+                <div class="project">
+                    <h3>Clothing Shop Management</h3>
+                    <p>A SQL-based project to manage inventory, sales, and customer details for a clothing shop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact" style="background-color: #f0f4f8; padding: 40px 20px; border-radius: 10px;">
+    <div class="container" style="max-width: 1000px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; color: #ff6f61; margin-bottom: 30px; text-align: center;">Contact Me</h2>
+        <div class="contact-info" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+            <!-- Email -->
+            <div class="contact-item" style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+                <i class="fas fa-envelope" style="font-size: 2rem; color: #ff6f61; margin-bottom: 10px;"></i>
+                <p style="font-size: 1.1rem; color: #333; margin-bottom: 10px;">Email</p>
+                <a href="mailto:nishakotecha128@gmail.com" style="font-size: 1.2rem; color: #ff6f61; text-decoration: none; transition: color 0.3s;">nishakotecha128@gmail.com</a>
+            </div>
+            <!-- Phone -->
+            <div class="contact-item" style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+                <i class="fas fa-phone-alt" style="font-size: 2rem; color: #ff6f61; margin-bottom: 10px;"></i>
+                <p style="font-size: 1.1rem; color: #333; margin-bottom: 10px;">Phone</p>
+                <a href="tel:+918767596242" style="font-size: 1.2rem; color: #ff6f61; text-decoration: none; transition: color 0.3s;">+91-8767596242</a>
+            </div>
+            <!-- LinkedIn -->
+            <div class="contact-item" style="text-align: center; flex: 1 1 250px; max-width: 300px;">
+                <i class="fab fa-linkedin" style="font-size: 2rem; color: #ff6f61; margin-bottom: 10px;"></i>
+                <p style="font-size: 1.1rem; color: #333; margin-bottom: 10px;">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/nisha-kotecha-404b52253" target="_blank" style="font-size: 1.2rem; color: #ff6f61; text-decoration: none; transition: color 0.3s;">Visit my LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nisha Kotecha | All rights reserved | <a href="https://www.linkedin.com/in/nisha-kotecha-404b52253">LinkedIn</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Skill Bar Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress');
+            progressBars.forEach(bar => {
+                bar.style.width = bar.style.width;
+            });
+        });
+    </script>
+</body>
+</html>
